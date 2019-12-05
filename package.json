@@ -45,6 +45,7 @@
     "@angular/material": "^7.3.0",
     "@material-extended/mde": "^2.1.1",
     "@ngrx/store": "^8.0.1",
+    "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.1.1",
     "cordova-plugin-device": "^2.0.3",
@@ -103,7 +104,8 @@
     "platforms": [
       "browser",
       "windows",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }

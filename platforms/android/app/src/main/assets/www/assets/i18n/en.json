@@ -1,0 +1,55 @@
+{
+    "COMPONENT": {
+        "CHAT": {
+            "WRITE": "is/are writing",
+            "CONNECT": "connected !",
+            "DISCONNECT": "disconnected !",
+            "BOT": "Bad Behavior ! Risk of exclusion"
+        },
+
+        "EDIT": {
+            "PHTASK": "Task name",
+            "PHDES": "Description",
+            "PHPRIO": "Priority",
+            "HIGHLEVEL": "High",
+            "NORMALLEVEL": "Medium",
+            "LOWLEVEL": "Low",
+            "SAVE": "Submit"
+        },
+
+        "ERROR": {
+            "TITLE": "Error 404",
+            "MESSAGE": "The page you are looking for doesn't exist !"
+        },
+
+        "MENU": {
+            "WELCOME": "Welcome",
+            "POPOVER": "Click here to create a task"
+        },
+
+        "PSEUDO": {
+            "WELCOME": "Hello !",
+            "MESSAGE": "What's your Pseudo?",
+            "SUBMIT": "Ok"
+        },
+
+        "TODO": {
+            "TODOTASK": "Task",
+            "LEVEL": "Priority"
+        },
+
+        "TODOLIST": {
+            "TASKTABLE": "Task",
+            "DESCTABLE": "Description",
+            "PRIOTABLE": "Priority",
+            "MODIF": "Modification",
+            "NOTASKMESSAGE": "No tasks at the moment.",
+            "DELETEBUTTON": "Delete"
+        },
+
+        "APP": {
+            "ERRORSERVER": "Offline Server !"
+        }
+    }
+}
+  

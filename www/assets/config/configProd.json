@@ -1,4 +1,4 @@
 {
     "production": true,
-    "ws_url": "http://localhost:8181"
+    "ws_url": "http://51.77.150.44:8181"
 }
