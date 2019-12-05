@@ -1,0 +1,54 @@
+{
+    "COMPONENT": {
+        "CHAT": {
+            "WRITE": "est/sont en train d'écrire",
+            "CONNECT": "s'est connecté !",
+            "DISCONNECT": "s'est déconnecté !",
+            "BOT": "Comportement innacceptable ! Risque d'exclusion"
+        },
+
+        "EDIT": {
+            "PHTASK": "Nom de la tache",
+            "PHDES": "Description",
+            "PHPRIO": "Priorité",
+            "HIGHLEVEL": "Haute",
+            "NORMALLEVEL": "Moyenne",
+            "LOWLEVEL": "Faible",
+            "SAVE": "Enregistrer"
+        },
+
+        "ERROR": {
+            "TITLE": "Erreur 404",
+            "MESSAGE": "La page que vous cherchez n'existe pas !"
+        },
+
+        "MENU": {
+            "WELCOME": "Bienvenue",
+            "POPOVER": "Cliquez ici pour créer une tâche"
+        },
+
+        "PSEUDO": {
+            "WELCOME": "Bonjour !",
+            "MESSAGE": "Quel est ton Pseudo?",
+            "SUBMIT": "Ok"
+        },
+
+        "TODO": {
+            "TODOTASK": "Tâche",
+            "LEVEL": "Priorité"
+        },
+
+        "TODOLIST": {
+            "TASKTABLE": "Tâche",
+            "DESCTABLE": "Description",
+            "PRIOTABLE": "Priorité",
+            "MODIF": "Modification",
+            "NOTASKMESSAGE": "Aucune tâche pour le moment.",
+            "DELETEBUTTON": "Supprimer"
+        },
+
+        "APP": {
+            "ERRORSERVER": "Serveur déconnecté !"
+        }
+    }
+}

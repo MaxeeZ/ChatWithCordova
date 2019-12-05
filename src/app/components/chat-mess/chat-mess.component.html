@@ -1,0 +1,22 @@
+<div *ngIf="emetteur" [ngSwitch]="connect">
+
+    <!-- the same view can be shown in more than one case -->
+    <div class="connect" *ngSwitchCase="0" [ngClass]="{'priorite1': priorite == 1, 'priorite2': priorite == 2 }">
+        <div><p><b>{{ emetteur }}</b> {{'COMPONENT.CHAT.DISCONNECT' | translate}}</p></div>
+    </div>
+
+    <div class="connect" *ngSwitchCase="1" [ngClass]="{'priorite1': priorite == 1, 'priorite2': priorite == 2 }">
+        <div><p><b>{{ emetteur }}</b> {{'COMPONENT.CHAT.CONNECT' | translate}}</p></div>
+    </div>
+
+    <div *ngSwitchCase="2" [ngClass]="{'priorite1': priorite == 1, 'priorite2': priorite == 2, 'priorite3': priorite == 3 }">
+        <div class="pseudo">{{ emetteur }}:</div>
+        <div class="message">{{ 'COMPONENT.CHAT.BOT' | translate }}</div>
+    </div>
+
+    <div *ngSwitchDefault [ngClass]="{'priorite1': priorite == 1, 'priorite2': priorite == 2 }">
+        <div class="pseudo">{{ emetteur }}:</div>
+        <div class="message">{{ message }}</div>
+    </div>
+
+</div>

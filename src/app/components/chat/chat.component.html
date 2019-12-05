@@ -1,0 +1,50 @@
+<div id="chatComponent">
+
+  <mat-card class="example-card design">
+
+    <mat-toolbar id="cursor" color="primary" >
+      <mat-toolbar-row>
+
+        <button class="buttonMoreVert" mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <span mat-menu-item *ngFor="let name of this.userNameList"> {{ name }}</span>
+        </mat-menu>
+
+        <span class="spanChat">CHAT</span>
+
+        <span class="example-spacer"></span>
+        <button mat-button (click)="openChat()">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <span class="space"></span>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <mat-card-content>
+        <div class="designContent">
+          <div class="view" #scrollMe style="overflow: scroll; height: xyz;">
+            <app-chat-mess *ngFor="let ChatMess of messageList; let i = id" [emetteur]="ChatMess.emetteur" [message]="ChatMess.message"
+              [id]="ChatMess.id" [priorite]="ChatMess.priorite" [connect]="ChatMess.connect" ></app-chat-mess>
+          </div>
+          <div class="info">
+            <span *ngIf="this.infoDialog == true"><em>{{ this.userWritingList }} {{ 'COMPONENT.CHAT.WRITE' | translate
+                }} ...</em></span>
+          </div>
+          <div class="inputMessage">
+            <mat-form-field class="messageInput">
+              <input matInput (keyup)="onKey($event, f)" type="text" id="message" name="message" placeholder="Message"
+                ngModel required autocomplete="off">
+            </mat-form-field>
+            <button mat-mini-fab class="btn-send" color="primary" type="submit" [disabled]="f.invalid">
+              <mat-icon>send</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </form>
+  </mat-card>
+
+</div>

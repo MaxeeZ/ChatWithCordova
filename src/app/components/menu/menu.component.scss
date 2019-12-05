@@ -1,0 +1,57 @@
+.example-icon {
+    padding: 0 14px;
+}
+ 
+ .example-spacer {
+    flex : 1  1 auto;
+ }
+
+ .mat-menu-panel {
+    min-width: 4em !important;
+ }
+
+.matColor {
+   color: #283593;
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+
+   .example-icon {
+      padding: 0 0.6em;
+      min-width: 0 !important;
+   }
+
+   #backBtn {
+      padding-left: 1em;
+   }
+  
+   mat-toolbar-row {
+      padding: 0 16px 0 0em;
+   }
+
+   #BienvSpan {
+      padding-left: 1em;
+   }
+
+}
+
+@media screen and (orientation: landscape) and (max-height: 450px) {
+
+   .example-icon {
+      padding: 0 0.6em;
+      min-width: 0 !important;
+   }
+
+   #backBtn {
+      padding-left: 1em;
+   }
+  
+   mat-toolbar-row {
+      padding: 0 16px 0 0em;
+   }
+
+   #BienvSpan {
+      padding-left: 1em;
+   }
+   
+}

@@ -1,0 +1,152 @@
+table {
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.using {
+  background-color: grey;
+}
+
+button:disabled {
+  opacity: 0.2;
+}
+
+.update {
+  text-align: center;
+}
+
+#info  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#messInfo {
+  vertical-align: middle;
+  line-height: normal;
+  display: inline-block;
+}
+
+#vertical {
+  line-height: 10em;
+}
+
+@media screen and (min-width: 450px) and (min-height: 451px) {
+    
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .paddTable {
+    padding: 1em;
+  }
+  
+}
+
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+    
+  .mat-form-field {
+    font-size: 14px;
+    width: 91%;
+    padding-left: 1.3em;
+  }
+
+  .paddTable {
+    padding: 0 0.3em 0.5em 1.2em;
+    width: 91%;
+  }
+
+  td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
+    padding-left: 6px;
+    padding-right: 9px;
+  }
+
+  .mat-header-cell {
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:last-of-type {
+    padding: 0;
+  }
+
+  #deleteBtn {
+    margin-left: 1.3em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  .btn-Table {
+    min-width: 2.2em !important;
+    padding: 0;
+  }
+
+  #messInfo {
+    vertical-align: middle;
+    line-height: normal;
+    display: inline-block;
+    margin: 2em 1em 1em 1em;
+  }
+
+}
+
+
+@media screen and (orientation: landscape) and (max-height: 450px) {
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 94%;
+    padding-left: 1.3em;
+  }
+
+  .paddTable {
+    padding: 0 0.3em 0.5em 1.2em;
+    width: 94%;
+  }
+
+  td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
+    padding-left: 6px;
+    padding-right: 9px;
+  }
+
+  .mat-header-cell {
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:last-of-type {
+    padding: 0;
+  }
+
+  #deleteBtn {
+    margin-left: 1.3em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  .btn-Table {
+    min-width: 2.2em !important;
+    padding: 0;
+  }
+
+  #messInfo {
+    vertical-align: middle;
+    line-height: normal;
+    display: inline-block;
+    margin: 2em 1em 1em 1em;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+}

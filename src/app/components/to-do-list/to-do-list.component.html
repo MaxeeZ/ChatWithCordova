@@ -1,0 +1,83 @@
+<div *ngIf="!hideTaskTab; else loggedOut">
+
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <div class="paddTable">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox color="warn" (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox color="warn" (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+            [disabled]="row.using">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Tache Column -->
+      <ng-container matColumnDef="nomTache">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'COMPONENT.TODOLIST.TASKTABLE' | translate }}</th>
+        <td mat-cell *matCellDef="let row"> {{row.nomTache}} </td>
+      </ng-container>
+
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'COMPONENT.TODOLIST.DESCTABLE' | translate }}</th>
+        <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+      </ng-container>
+
+      <!-- Priorité Column -->
+      <ng-container matColumnDef="priorite">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'COMPONENT.TODOLIST.PRIOTABLE' | translate }}</th>
+        <td mat-cell *matCellDef="let row"> {{row.priorite}} </td>
+      </ng-container>
+
+      <!-- Modif Column -->
+      <ng-container matColumnDef="modif">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          <button class="btn-Table" mat-button [routerLink]="['/update', row.id]" (click)="update(row.id)" *ngIf="!row.using">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <div *ngIf="row.using" class="update">{{ 'COMPONENT.TODOLIST.MODIF' | translate }}</div>
+        </td>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          <button class="btn-Table" mat-button (click)="delete(row.id, null)" *ngIf="!row.using">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <div *ngIf="row.using" class="update"> {{ row.currentUser }}</div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr #rowData mat-row *matRowDef="let row; columns: displayedColumns;" id="{{ row.currentUser }}" [class.using]="row.using"></tr>
+    </table>
+  </div>
+
+  <button *ngIf="this.selection.selected.length > 0" mat-raised-button color="warn" id="deleteBtn" (click)="deleteSelected()">{{ 'COMPONENT.TODOLIST.DELETEBUTTON' | translate }}</button>
+
+</div>
+
+<ng-template #loggedOut>
+
+  <div></div>
+
+  <div id="info">
+    <div id="vertical">
+      <span id="messInfo" class="mat-display-1">{{ 'COMPONENT.TODOLIST.NOTASKMESSAGE' | translate }}</span>
+    </div>
+  </div>
+
+</ng-template>

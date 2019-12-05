@@ -1,0 +1,4 @@
+{
+    "production": false,
+    "ws_url": "http://localhost:8181"
+}

@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span id="BienvSpan" *ngIf="btnBackTaskList == true">{{ 'COMPONENT.MENU.WELCOME' | translate }} {{ pseudo }}</span>
+    <button id="backBtn" *ngIf="btnBackTaskList == false" mat-button (click)="updateBT(true)" routerActiveLink="tasks" routerLink="tasks">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <button class="example-icon" mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>language</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button [ngClass]="{'matColor': language.localeCompare('fr') == 0}" mat-menu-item (click)="translate('fr')"><b>FR</b></button>
+        <button [ngClass]="{'matColor': language.localeCompare('en') == 0}" mat-menu-item (click)="translate('en')"><b>EN</b></button>
+    </mat-menu>
+
+    <button mat-button class="example-icon" (click)="openChat()">
+      <mat-icon [matBadge]="this.nbUser" matBadgeColor="warn">account_circle</mat-icon>
+    </button>
+    
+    <button mat-button [mdePopoverTriggerFor]="appPopover"  mdePopoverTriggerOn="none" (click)="updateBT(false)" class="example-icon" routerActiveLink="create" routerLink="create">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mde-popover #appPopover="mdePopover" [mdePopoverOverlapTrigger]="false" [mdePopoverOffsetX]="-12" [mdePopoverCloseOnClick]="false"  mdePopoverArrowColor="#FFFFFF">
+  <mat-card>
+    <mat-card-content>
+        {{ 'COMPONENT.MENU.POPOVER' | translate }}
+    </mat-card-content>
+  </mat-card>
+</mde-popover>

@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{ 'COMPONENT.PSEUDO.WELCOME' | translate }}</h1>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div mat-dialog-content>
+    <p>{{ 'COMPONENT.PSEUDO.MESSAGE' | translate }}</p>
+    <mat-form-field>
+      <input matInput type="text" id="newpseudo" name="newpseudo" [(ngModel)]="data.name" required autocomplete="off">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button type="submit" color="primary" [disabled]="f.invalid">{{ 'COMPONENT.PSEUDO.SUBMIT' | translate }}</button>
+  </div>
+</form>

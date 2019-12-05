@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-8col-sm-offset-2">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="{{ 'COMPONENT.EDIT.PHTASK' | translate }}" type="text" id="nomTache" name="nomTache" [ngModel]="defaultNomTache" autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="{{ 'COMPONENT.EDIT.PHDES' | translate }}" type="text" id="description" name="description" [ngModel]="defaultDescription" autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="{{ 'COMPONENT.EDIT.PHPRIO' | translate }}" id="priorite" name="priorite" [ngModel]="defaultPriorite" autocomplete="off" required>
+            <mat-option>--</mat-option>
+            <mat-option value="Haute">{{ 'COMPONENT.EDIT.HIGHLEVEL' | translate }}</mat-option>
+            <mat-option value="Moyenne">{{ 'COMPONENT.EDIT.NORMALLEVEL' | translate }}</mat-option>
+            <mat-option value="Faible">{{ 'COMPONENT.EDIT.LOWLEVEL' | translate }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <button mat-flat-button id="saveBtn" color="primary" type="submit" (click)="updateBT(true)" [disabled]="f.invalid">{{ 'COMPONENT.EDIT.SAVE' | translate }}</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+.example-container > * {
+    width: 100%;
+}
+
+form {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+
+    .mat-form-field {
+        width: 100% !important;
+    }
+
+    .row {
+        margin: 1em auto auto auto;   
+        width: 100%;
+    }
+
+    #saveBtn {
+        margin-bottom: 1em;
+    }
+
+}
+
+@media screen and (orientation: landscape) and (max-height: 450px) {
+
+    .mat-form-field {
+        width: 100% !important;
+    }
+
+    .row {
+        margin: 1em auto auto auto;   
+        width: 100%;
+    }
+
+    #saveBtn {
+        margin-bottom: 1em;
+    }
+
+}
